@@ -25,14 +25,53 @@ export default function Home() {
         </h1>
         {/*galeria de imagenes*/}
         <div className="grid grid-cols-3 gap-4 w-full justify-items-center">
-          <img src="" alt="imagen 1" className="bg-orange-400 w-full h-80 rounded-lg"/>
-          <img src="" alt="imagen 2" className="bg-orange-400 w-full h-80 rounded-lg"/>
-          <img src="" alt="imagen 3" className="bg-orange-400 w-full h-80 rounded-lg"/>
-          <img src="" alt="imagen 4" className="bg-orange-400 w-full h-80 rounded-lg"/>
-
+          <img
+            src=""
+            alt="imagen 1"
+            className="bg-orange-400 w-full h-80 rounded-lg"
+          />
+          <img
+            src=""
+            alt="imagen 2"
+            className="bg-orange-400 w-full h-80 rounded-lg"
+          />
+          <img
+            src=""
+            alt="imagen 3"
+            className="bg-orange-400 w-full h-80 rounded-lg"
+          />
+          <img
+            src=""
+            alt="imagen 4"
+            className="bg-orange-400 w-full h-80 rounded-lg"
+          />
         </div>
       </div>
-      <div className="flex items-center justify-center h-16">footer</div>
+      {/*Footer*/}
+      <div className="flex flex-col items-center justify-around p-4 h-auto">
+        <div className="p-4 font-bold flex flex-col justify-center items-center">
+          <h1 className="text-3xl">Lets work together</h1>
+          <h1 className="text-xl">hello@hello.com</h1>
+        </div>
+        <div className="flex items-center w-1/2 justify-between">
+          <div className="p-4 flex flex-col items-center">
+            <h2 className="font-bold mb-2">Quick enlace</h2>
+            <ul className="list-none ">
+              <li className="hover:text-blue-500">about</li>
+              <li className="hover:text-blue-500">home</li>
+              <li className="hover:text-blue-500">contact</li>
+            </ul>
+          </div>
+          <div className="p-4 flex flex-col items-center">
+            <h2 className="font-bold mb-2">Quick enlace</h2>
+            <ul className="list-none ">
+              <li className="hover:text-blue-500">github</li>
+              <li className="hover:text-blue-500">gmail</li>
+              <li className="hover:text-blue-500">phone</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
