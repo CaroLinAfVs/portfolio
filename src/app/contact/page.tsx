@@ -1,40 +1,30 @@
 // pages/contact.js
 import React from 'react';
-import Link from 'next/link';
+import Navbar from '../components/Navbar/page';
+import Footer from '../components/Footer/page';
+import Hero from '../components/Hero/page';
 
 const Contact = () => {
   return (
     <div className="divide-y divide-slate-700 h-screen">
       {/*navbar*/}
-      <div className="flex items-center justify-center p-4 h-16">
-        <nav className="space-x-8">
-          <ul className="flex space-x-6">
-            <li>
-              <Link href="/">Home</Link>
-            </li>
-            <li>
-              <Link href="/about">About Me</Link>
-            </li>
-            <li>
-              <Link href="/contact">Contact</Link>
-            </li>
-          </ul>
-        </nav>
-      </div>
+      <Navbar />
 
       {/*body*/}
       <div className="flex flex-col justify-center items-center mb-6 py-5">
         <div className="flex justify-center items-center flex-grow mt-8 min-h-80">
-          <h1 className="font-mono text-xl w-4/5 text-center font-bold leading-relaxed">
-            Thank you for visiting my portfolio! If you have a proposal, a
-            question, or simply want to connect, I’ve provided several ways to
-            reach me.😊
-          </h1>
+          <Hero
+            text="Thank you for visiting my portfolio! If you have a proposal, a question, or simply want to connect, I’ve provided several ways to reach me.😊"
+            className="font-mono text-xl w-4/5 text-center leading-relaxed"
+          />
         </div>
         <div className="">
           <form className="bg-zinc-900  p-6 shadow-md rounded-lg mb-8">
             <div className="mb-4 ">
-              <label htmlFor="name" className="block text-gray-300 font-semibold">
+              <label
+                htmlFor="name"
+                className="block text-gray-300 font-semibold"
+              >
                 Nombre
               </label>
               <input
@@ -47,7 +37,10 @@ const Contact = () => {
               />
             </div>
             <div className="mb-4">
-              <label htmlFor="email" className="block text-gray-300 font-semibold">
+              <label
+                htmlFor="email"
+                className="block text-gray-300 font-semibold"
+              >
                 Correo Electrónico
               </label>
               <input
@@ -123,7 +116,6 @@ const Contact = () => {
                 <polyline points="22,6 12,13 2,6" />
               </svg>
               <span>Gmail</span>
-              
             </a>
             <a
               href="https://linkedin.com/in/tuusuario"
@@ -145,7 +137,6 @@ const Contact = () => {
                 <circle cx="4" cy="4" r="2" />
               </svg>{' '}
               <span>Linkedin</span>
-              
             </a>
             <a
               href="https://github.com/tuusuario"
@@ -165,37 +156,13 @@ const Contact = () => {
                 <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
               </svg>{' '}
               <span>GitHub</span>
-              
             </a>
           </div>
         </div>
       </div>
 
       {/*footer*/}
-      <div className="flex flex-col items-center justify-around p-4 h-60">
-        <div className="p-4 font-bold flex flex-col justify-center items-center">
-          <h1 className="text-3xl">Lets work together</h1>
-          <h1 className="text-xl">hello@hello.com</h1>
-        </div>
-        <div className="flex items-center w-1/2 justify-between">
-          <div className="p-4 flex flex-col items-center">
-            <h2 className="font-bold mb-2">Quick enlace</h2>
-            <ul className="list-none ">
-              <li className="hover:text-blue-500">about</li>
-              <li className="hover:text-blue-500">home</li>
-              <li className="hover:text-blue-500">contact</li>
-            </ul>
-          </div>
-          <div className="p-4 flex flex-col items-center">
-            <h2 className="font-bold mb-2">Quick enlace</h2>
-            <ul className="list-none ">
-              <li className="hover:text-blue-500">github</li>
-              <li className="hover:text-blue-500">gmail</li>
-              <li className="hover:text-blue-500">phone</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      <Footer />
     </div>
   );
 };

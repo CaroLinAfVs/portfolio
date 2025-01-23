@@ -1,25 +1,12 @@
 // pages/about.js
 import React from 'react';
-import Link from 'next/link';
+import Navbar from '../components/Navbar/page';
+import Footer from '../components/Footer/page';
 
 const About = () => {
   return (
     <div className="divide-y divide-slate-700 h-screen">
-      <div className="flex items-center justify-center items-center p-4 h-16">
-        <nav className="space-x-8">
-          <ul className="flex space-x-6">
-            <li>
-              <Link href="/">Home</Link>
-            </li>
-            <li>
-              <Link href="/about">About Me</Link>
-            </li>
-            <li>
-              <Link href="/contact">Contact</Link>
-            </li>
-          </ul>
-        </nav>
-      </div>
+      <Navbar/>
       {/*body*/}
       <div className="flex flex-col justify-center items-center mb-12">
         {/*header*/}
@@ -61,30 +48,7 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col items-center justify-around p-4 ">
-        <div className="p-4 font-bold flex flex-col justify-center items-center">
-          <h1 className="text-3xl">Lets work together</h1>
-          <h1 className="text-xl">hello@hello.com</h1>
-        </div>
-        <div className="flex items-center w-1/2 justify-between">
-          <div className="p-4 flex flex-col items-center">
-            <h2 className="font-bold mb-2">Quick enlace</h2>
-            <ul className="list-none ">
-              <li className="hover:text-blue-500">about</li>
-              <li className="hover:text-blue-500">home</li>
-              <li className="hover:text-blue-500">contact</li>
-            </ul>
-          </div>
-          <div className="p-4 flex flex-col items-center">
-            <h2 className="font-bold mb-2">Quick enlace</h2>
-            <ul className="list-none ">
-              <li className="hover:text-blue-500">github</li>
-              <li className="hover:text-blue-500">gmail</li>
-              <li className="hover:text-blue-500">phone</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      <Footer/>
     </div>
   );
 };
