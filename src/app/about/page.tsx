@@ -1,12 +1,12 @@
 // pages/about.js
 import React from 'react';
-import Navbar from '../components/Navbar/page';
-import Footer from '../components/Footer/page';
+import Navbar from '../../components/Navbar/Navbar';
+import Footer from '../../components/Footer/Footer';
 
 const About = () => {
   return (
     <div className="divide-y divide-slate-700 h-screen">
-      <Navbar/>
+      <Navbar />
       {/*body*/}
       <div className="flex flex-col justify-center items-center mb-12">
         {/*header*/}
@@ -20,7 +20,9 @@ const About = () => {
         {/*text*/}
         <div className="my-7  flex flex-col items-center justify-center gap-14 w-1/2">
           <div className="text-pretty text-center">
-            <h1 className="font-sans font-bold text-5xl mb-4">My name is carolina</h1>
+            <h1 className="font-sans font-bold text-5xl mb-4">
+              My name is carolina
+            </h1>
             <p className="text-2xl tracking-wide leading-relaxed">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
               laoreet diam eu leo molestie tempus. Sed tristique blandit
@@ -48,7 +50,7 @@ const About = () => {
           </div>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 };

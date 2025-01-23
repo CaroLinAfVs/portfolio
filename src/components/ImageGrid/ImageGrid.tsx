@@ -1,4 +1,5 @@
-import Card from '../Card/page';
+// src/components/ImageGrid/ImageGrid.tsx
+import Card from '@/components/Card/Card';
 
 const ImageGrid = () => {
   return (
@@ -10,4 +11,5 @@ const ImageGrid = () => {
     </div>
   );
 };
+
 export default ImageGrid;

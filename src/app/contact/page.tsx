@@ -1,8 +1,8 @@
 // pages/contact.js
 import React from 'react';
-import Navbar from '../components/Navbar/page';
-import Footer from '../components/Footer/page';
-import Hero from '../components/Hero/page';
+import Navbar from '../../components/Navbar/Navbar';
+import Footer from '../../components/Footer/Footer';
+import Hero from '../../components/Hero/Hero';
 
 const Contact = () => {
   return (
