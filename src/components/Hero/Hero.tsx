@@ -6,6 +6,8 @@ interface HeroProps {
   className?: string;
 }
 
+// TODO: Remove comments
+
 const Hero: React.FC<HeroProps> = ({
   text = 'Welcome to my portfolio!',
   className = '',
@@ -15,6 +17,7 @@ const Hero: React.FC<HeroProps> = ({
 
   useEffect(() => {
     if (!text || text.trim() === '') {
+      // TODO: Text should be in english
       console.error('El texto no puede estar vacío.');
       return;
     }

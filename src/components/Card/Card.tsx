@@ -1,3 +1,4 @@
+// TODO: Remove comments
 // src/components/Card/Card.tsx
 interface CardProps {
   color?: string;

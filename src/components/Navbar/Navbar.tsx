@@ -12,6 +12,22 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  /* 
+  TODO: 
+  To improve code reusability, 
+  create an array for the navigation items 
+  and then map over it using .map() to generate the links. 
+  This will avoid code duplication 
+  and make it easier to add or modify items in the future.
+
+  Example:
+  const navItems = [
+    { text: 'Home', href: '/' },
+    { text: 'About Me', href: '/about' },
+    { text: 'Contact', href: '/contact' },
+  ];
+  */
+
   return (
     <div className="flex items-center justify-center p-4 h-16">
       {/*navbar pantallas grandes*/}
