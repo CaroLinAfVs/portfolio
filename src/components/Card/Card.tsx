@@ -5,12 +5,11 @@ interface CardProps {
 }
 
 const Card: React.FC<CardProps> = ({
-  color = "bg-orange-400",
-  height = "h-96",
+  color = 'bg-orange-400',
+  height = 'h-96',
 }) => {
   return (
-    <div className={`${color} w-full ${height} rounded-lg shadow-md`}>
-    </div>
+    <div className={`${color} w-full ${height} rounded-lg shadow-md`}></div>
   );
 };
 

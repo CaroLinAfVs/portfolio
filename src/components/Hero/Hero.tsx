@@ -6,13 +6,16 @@ interface HeroProps {
   className?: string;
 }
 
-const Hero: React.FC<HeroProps> = ({ text = "Welcome to my portfolio!",className = "" }) => {
-  const [displayedText, setDisplayedText] = useState<string>(""); // Texto que se mostrará
+const Hero: React.FC<HeroProps> = ({
+  text = 'Welcome to my portfolio!',
+  className = '',
+}) => {
+  const [displayedText, setDisplayedText] = useState<string>(''); // Texto que se mostrará
   const [currentIndex, setCurrentIndex] = useState<number>(0); // Índice actual en la animación
 
   useEffect(() => {
-    if (!text || text.trim() === "") {
-      console.error("El texto no puede estar vacío.");
+    if (!text || text.trim() === '') {
+      console.error('El texto no puede estar vacío.');
       return;
     }
 
@@ -31,9 +34,8 @@ const Hero: React.FC<HeroProps> = ({ text = "Welcome to my portfolio!",className
   return (
     <div className="flex items-center justify-center w-full h-[400px] ">
       <h1 className={`font-bold ${className}`}>
-        {displayedText || "\u00A0"} {/* Espacio vacío antes de mostrar texto */}
+        {displayedText || '\u00A0'} {/* Espacio vacío antes de mostrar texto */}
       </h1>
-      
     </div>
   );
 };

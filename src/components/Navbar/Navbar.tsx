@@ -1,8 +1,7 @@
-
 'use client';
 
 import Link from 'next/link';
-import { useState } from "react";
+import { useState } from 'react';
 
 const Navbar = () => {
   // Estado para el menú hamburguesa
@@ -52,22 +51,20 @@ const Navbar = () => {
 
         {/*menu despeglabe contenido*/}
         {isMenuOpen && (
-        <nav className="absolute top-16 left-0 w-full md:hidden">
-          <ul className="flex flex-col items-center space-y-4 p-4">
-            <li>
-              <Link href="/">Home</Link>
-            </li>
-            <li>
-              <Link href="/about">About Me</Link>
-            </li>
-            <li>
-              <Link href="/contact">Contact</Link>
-            </li>
-          </ul>
-        </nav>
-      )}
-
-
+          <nav className="absolute top-16 left-0 w-full md:hidden">
+            <ul className="flex flex-col items-center space-y-4 p-4">
+              <li>
+                <Link href="/">Home</Link>
+              </li>
+              <li>
+                <Link href="/about">About Me</Link>
+              </li>
+              <li>
+                <Link href="/contact">Contact</Link>
+              </li>
+            </ul>
+          </nav>
+        )}
       </div>
     </div>
   );
