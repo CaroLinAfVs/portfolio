@@ -1,6 +1,4 @@
-'use client';
-
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { notFound } from 'next/navigation';
 import Navbar from '@/components/Navbar/Navbar';
 import Footer from '@/components/Footer/Footer';
@@ -44,14 +42,19 @@ const projects: Record<string, Project> = {
 };
 
 const ProjectDetails = ({ params }: { params: { id: string } }) => {
-  const project = projects[params.id];
+  // Desenvuelve los parámetros con React.use()
+  const [project, setProject] = useState<Project | null>(null);
+
+  useEffect(() => {
+    const currentProject = projects[params.id];
+    setProject(currentProject || null);
+  }, [params.id]);
 
   if (!project) {
     return notFound(); // Retorna una página 404 si el ID no existe
   }
 
-  // Estado para la imagen actual
-  const [currentImage, setCurrentImage] = useState(project.images[0]);
+  const [currentImage, setCurrentImage] = useState<string>(project.images[0]);
 
   return (
     <div className="divide-y divide-slate-700 h-screen">
