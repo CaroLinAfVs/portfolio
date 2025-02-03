@@ -1,8 +1,10 @@
+'use client';
+
 import { useState, useEffect } from 'react';
 import { notFound } from 'next/navigation';
 import Navbar from '@/components/Navbar/Navbar';
 import Footer from '@/components/Footer/Footer';
-import Image from 'next/image'; // Importa Image de Next.js
+import Image from 'next/image'; 
 
 interface Project {
   title: string;
