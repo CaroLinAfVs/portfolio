@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { notFound } from 'next/navigation';
 import Navbar from '@/components/Navbar/Navbar';
 import Footer from '@/components/Footer/Footer';
+import Image from 'next/image'; // Importa Image de Next.js
 
 interface Project {
   title: string;
@@ -54,39 +55,43 @@ const ProjectDetails = ({ params }: { params: { id: string } }) => {
 
   return (
     <div className="divide-y divide-slate-700 h-screen">
-      <Navbar/>
-    <div className="flex flex-col md:flex-row items-center gap-6 p-6">
-      {/* Carrusel */}
-      <div className="flex-1">
-        <div className="w-3/4 h-96 overflow-hidden  rounded-lg">
-          <img
-            src={currentImage}
-            alt={project.title}
-            className="w-full h-full object-cover transition-opacity duration-300"
-          />
-        </div>
-        <div className="flex gap-2 mt-4">
-          {project.images.map((img, index) => (
-            <img
-              key={index}
-              src={img}
-              alt={`Thumbnail ${index + 1}`}
-              className={`w-16 h-16 rounded-lg cursor-pointer border-2 ${
-                currentImage === img ? 'border-blue-500' : 'border-transparent'
-              }`}
-              onClick={() => setCurrentImage(img)} // Cambia la imagen al hacer clic
+      <Navbar />
+      <div className="flex flex-col md:flex-row items-center gap-6 p-6">
+        {/* Carrusel */}
+        <div className="flex-1">
+          <div className="w-3/4 h-96 overflow-hidden rounded-lg">
+            <Image
+              src={currentImage}
+              alt={project.title}
+              width={750} // Ajusta el width y height de acuerdo a tus necesidades
+              height={500}
+              className="w-full h-full object-cover transition-opacity duration-300"
             />
-          ))}
+          </div>
+          <div className="flex gap-2 mt-4">
+            {project.images.map((img, index) => (
+              <Image
+                key={index}
+                src={img}
+                alt={`Thumbnail ${index + 1}`}
+                width={64} // Tamaño de las miniaturas
+                height={64}
+                className={`w-16 h-16 rounded-lg cursor-pointer border-2 ${
+                  currentImage === img ? 'border-blue-500' : 'border-transparent'
+                }`}
+                onClick={() => setCurrentImage(img)} // Cambia la imagen al hacer clic
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Detalles del proyecto */}
+        <div className="flex-1">
+          <h1 className="text-3xl font-bold">{project.title}</h1>
+          <p className="text-gray-600 mt-4">{project.description}</p>
         </div>
       </div>
-
-      {/* Detalles del proyecto */}
-      <div className="flex-1">
-        <h1 className="text-3xl font-bold">{project.title}</h1>
-        <p className="text-gray-600 mt-4">{project.description}</p>
-      </div>
-    </div>
-    <Footer/>
+      <Footer />
     </div>
   );
 };
