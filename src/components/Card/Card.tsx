@@ -1,16 +1,28 @@
-// src/components/Card/Card.tsx
+import Link from "next/link";
+
 interface CardProps {
-  color?: string;
-  height?: string;
+  image: string; // Ruta de la imagen
+  text: string;  // Texto que aparecerá al hacer hover
+  projectId: string; // ID del proyecto para la navegación
 }
 
-const Card: React.FC<CardProps> = ({
-  color = "bg-orange-400",
-  height = "h-96",
-}) => {
+const Card: React.FC<CardProps> = ({ image, text, projectId }) => {
   return (
-    <div className={`${color} w-full ${height} rounded-lg shadow-md`}>
-    </div>
+    <Link href={`/projects/${projectId}`} className="group block relative w-full h-96 rounded-lg overflow-hidden">
+      {/* Imagen */}
+      <img
+        src={image}
+        alt={text}
+        className="w-full h-full object-cover"
+      />
+
+      {/* Overlay y texto al hacer hover */}
+      <div
+        className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/50"
+      >
+        <span className="text-white text-lg font-bold">{text}</span>
+      </div>
+    </Link>
   );
 };
 
