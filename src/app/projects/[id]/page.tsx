@@ -40,7 +40,7 @@ const ProjectDetails = () => {
   const [currentImage, setCurrentImage] = useState<string>('');
 
   useEffect(() => {
-    if (id && projects[id]) {
+    if (typeof id === 'string' && projects[id]) {
       setProject(projects[id]);
       setCurrentImage(projects[id].images[0]);
     } else {
@@ -103,8 +103,6 @@ const ProjectDetails = () => {
       <Footer />
     </div>
   );
-  
-  
 };
 
 export default ProjectDetails;
