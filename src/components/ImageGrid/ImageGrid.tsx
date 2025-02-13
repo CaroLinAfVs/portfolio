@@ -3,7 +3,7 @@ import Card from '@/components/Card/Card';
 
 const ImageGrid = () => {
   return (
-    <div className="grid grid-cols-3 gap-4 w-full justify-items-center">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-4 w-full justify-items-center">
       <Card 
         image="https://images.ctfassets.net/ub3bwfd53mwy/5zi8myLobtihb1cWl3tj8L/45a40e66765f26beddf7eeee29f74723/6_Image.jpg?w=750" 
         text="Gato 1" 

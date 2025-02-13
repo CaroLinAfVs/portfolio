@@ -1,4 +1,3 @@
-
 'use client';
 
 import Link from 'next/link';
@@ -14,8 +13,8 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex items-center justify-center p-4 h-16">
-      {/*navbar pantallas grandes*/}
+    <div className="fixed top-0 left-0 w-full z-50 bg-[var(--background)] shadow-md p-4 h-16 flex items-center justify-center md:static">
+      {/* Navbar pantallas grandes */}
       <nav className="hidden md:block">
         <ul className="flex space-x-6">
           <li>
@@ -30,7 +29,7 @@ const Navbar = () => {
         </ul>
       </nav>
 
-      {/*navbar pantalla pequeñas*/}
+      {/* Navbar pantalla pequeñas */}
       <div className="md:hidden flex justify-start w-full ml-2">
         <button onClick={toggleMenu}>
           <svg
@@ -40,34 +39,32 @@ const Navbar = () => {
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           >
             <line x1="3" y1="12" x2="21" y2="12" />
             <line x1="3" y1="6" x2="21" y2="6" />
             <line x1="3" y1="18" x2="21" y2="18" />
-          </svg>{' '}
+          </svg>
         </button>
 
-        {/*menu despeglabe contenido*/}
+        {/* Menú desplegable */}
         {isMenuOpen && (
-        <nav className="absolute top-16 left-0 w-full md:hidden">
-          <ul className="flex flex-col items-center space-y-4 p-4">
-            <li>
-              <Link href="/">Home</Link>
-            </li>
-            <li>
-              <Link href="/about">About Me</Link>
-            </li>
-            <li>
-              <Link href="/contact">Contact</Link>
-            </li>
-          </ul>
-        </nav>
-      )}
-
-
+          <nav className="absolute top-16 bg-zinc-900 left-0 w-full md:hidden">
+            <ul className="flex flex-col items-center space-y-4 p-4">
+              <li>
+                <Link href="/">Home</Link>
+              </li>
+              <li>
+                <Link href="/about">About Me</Link>
+              </li>
+              <li>
+                <Link href="/contact">Contact</Link>
+              </li>
+            </ul>
+          </nav>
+        )}
       </div>
     </div>
   );
