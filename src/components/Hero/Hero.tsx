@@ -6,7 +6,7 @@ interface HeroProps {
   className?: string;
 }
 
-const Hero: React.FC<HeroProps> = ({ text = "Welcome to my portfolio!",className = "" }) => {
+const Hero = ({ text, className = "" }: HeroProps) => {
   const [displayedText, setDisplayedText] = useState<string>(""); // Texto que se mostrará
   const [currentIndex, setCurrentIndex] = useState<number>(0); // Índice actual en la animación
 
@@ -17,23 +17,25 @@ const Hero: React.FC<HeroProps> = ({ text = "Welcome to my portfolio!",className
     }
 
     const interval = setInterval(() => {
+      console.log("previous: ", 0);
+      console.log("next: ", currentIndex + 1);
+      console.log("character: ", text.slice(0, currentIndex + 1));
       setDisplayedText(text.slice(0, currentIndex + 1)); // Mostramos una porción del texto
-      setCurrentIndex((prev) => prev + 1);
-
-      if (currentIndex >= text.length - 1) {
-        clearInterval(interval); // Detenemos la animación al final
-      }
+      setCurrentIndex(currentIndex + 1);
     }, 100); // Velocidad entre letras
 
+    if (currentIndex === text.length) {
+      clearInterval(interval); // Detenemos la animación al final
+    }
+
     return () => clearInterval(interval); // Limpiamos el intervalo al desmontar
-  }, [text, currentIndex]); // Escuchamos cambios en el texto y el índice actual
+  }, [currentIndex]); // Escuchamos cambios en el texto y el índice actual
 
   return (
     <div className="flex items-center justify-center w-full h-[400px] ">
       <h1 className={`font-bold ${className}`}>
-        {displayedText || "\u00A0"} {/* Espacio vacío antes de mostrar texto */}
+        {displayedText}
       </h1>
-      
     </div>
   );
 };
