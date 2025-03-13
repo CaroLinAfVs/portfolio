@@ -13,7 +13,7 @@ const Navbar = () => {
   };
 
   return ( 
-    <div className="fixed top-0 left-0 w-full z-50 bg-[#0a0a0a] shadow-md p-4 h-16 flex items-center justify-center md:static">
+    <div className="fixed top-0 left-0 w-full z-50  shadow-md p-4 h-16 flex items-center justify-center md:static">
       {/* Navbar pantallas grandes */}
       <nav className="hidden md:block">
         <ul className="flex space-x-6">
