@@ -2,6 +2,7 @@
 import React from 'react';
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
+import Image from 'next/image';
 
 const About = () => {
   return (
@@ -11,7 +12,7 @@ const About = () => {
       <div className="flex flex-col justify-center items-center mb-12">
         {/*header*/}
         <div className="flex items-end flex-grow mt-8 min-h-80">
-          <img
+          <Image
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIgMqSnkvNobGbKhq3TnGEPv7kmcwJLTdsJg&s"
             alt="gatito"
             className="w-48 h-48 object-cover rounded-full"

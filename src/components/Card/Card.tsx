@@ -1,16 +1,17 @@
 import Link from "next/link";
+import Image from "next/image";
 
 interface CardProps {
-  image: string; // Ruta de la imagen
-  text: string;  // Texto que aparecerá al hacer hover
-  projectId: string; // ID del proyecto para la navegación
+  image: string; 
+  text: string;  
+  projectId: string; 
 }
 
 const Card: React.FC<CardProps> = ({ image, text, projectId }) => {
   return (
     <Link href={`/projects/${projectId}`} className="group block relative w-full h-96 rounded-lg overflow-hidden">
       {/* Imagen */}
-      <img
+      <Image
         src={image}
         alt={text}
         className="w-full h-full object-cover"

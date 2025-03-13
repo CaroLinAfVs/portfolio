@@ -2,6 +2,7 @@ import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
 import Hero from '../components/Hero/Hero';
 import ImageGrid from '../components/ImageGrid/ImageGrid';
+import projects from '../data/projects.json'
 
 export default function Home() {
   return (
@@ -10,9 +11,9 @@ export default function Home() {
       <div className="flex flex-col items-center justify-center flex-1 p-20">
         <Hero
           className="font-mono text-4xl sm:text-5xl md:text-6xl text-center font-bold"
-          text="Welcome to my portfolio!"
+          text="This is my portfolio. Enjoy!"
         />
-        <ImageGrid />
+        <ImageGrid cards={projects} />{' '}
       </div>
       <Footer />
     </div>
