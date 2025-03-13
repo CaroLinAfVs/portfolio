@@ -12,8 +12,8 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  return (
-    <div className="fixed top-0 left-0 w-full z-50 bg-[var(--background)] shadow-md p-4 h-16 flex items-center justify-center md:static">
+  return ( 
+    <div className="fixed top-0 left-0 w-full z-50 bg-[#0a0a0a] shadow-md p-4 h-16 flex items-center justify-center md:static">
       {/* Navbar pantallas grandes */}
       <nav className="hidden md:block">
         <ul className="flex space-x-6">
@@ -51,7 +51,7 @@ const Navbar = () => {
 
         {/* Menú desplegable */}
         {isMenuOpen && (
-          <nav className="absolute top-16 bg-zinc-900 left-0 w-full md:hidden">
+          <nav className="absolute top-16 bg-zinc-900 text-white left-0 w-full md:hidden">
             <ul className="flex flex-col items-center space-y-4 p-4">
               <li>
                 <Link href="/">Home</Link>
